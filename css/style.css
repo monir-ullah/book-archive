@@ -1,0 +1,19 @@
+.over-flow-hidden{
+    max-height: 550px;
+    overflow: scroll;
+    overflow-x: hidden;
+    
+}
+#show-found-result{
+    color: white;
+    padding: 10px 0px;
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.11), 0 6px 20px 0 rgba(0, 0, 0, 0.082);
+    display: none;
+    border-radius: 20px;
+    background-color: #04AA6D;
+}
+img{
+    width: 100px;
+    height: 300px;
+}
