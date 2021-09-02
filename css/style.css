@@ -1,9 +1,12 @@
+/* Added Scrool(y) Bar to Show all information     Start */
 .over-flow-hidden{
     max-height: 550px;
     overflow: scroll;
-    overflow-x: hidden;
-    
+    overflow-x: hidden;   
 }
+/* Added Scrool Bar to Show all information     End */
+
+/* Show the No Result/Found Result number     Start */
 #show-found-result{
     color: white;
     padding: 10px 0px;
@@ -13,7 +16,11 @@
     border-radius: 20px;
     background-color: #04AA6D;
 }
+/* Show the No Result/Found Result number     End */
+
+/* This is for control Image size Start */
 img{
     width: 100px;
     height: 300px;
 }
+/* This is for control Image size End */
