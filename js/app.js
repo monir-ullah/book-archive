@@ -1,9 +1,14 @@
 // This Funcion is for Load Result or Fetch (Code Start)
 
 const loadTheSearchResult = () =>{
+    spinnerToggle('block');
+    spinnerDivToggle('none');
+    const showSearchResut = document.getElementById('show-search-results');
+    showSearchResut.textContent = "";
     const inputFieldText = document.getElementById("input-feild");
     const inputFieldValu = inputFieldText.value;
     inputFieldText.value = "";
+    
 
     const url = ` https://openlibrary.org/search.json?q=${inputFieldValu}`;
     const displayResult = () =>{
@@ -16,16 +21,29 @@ const loadTheSearchResult = () =>{
     .then(res => res.json() )
     .then(data => showFoundREsult(data));
     }
+    
     showRoundNumberResult();
     displayResult();
+   
 }
 // This Funcion is for Load Result or Fetch (Code End)
+
+// Spinner Toggle Section   Start(code)
+const spinnerToggle = displayStyle =>{
+    document.getElementById('spinner-toggle').style.display=displayStyle;
+}
+const spinnerDivToggle = displayStyle =>{
+    document.getElementById('show-found-result').style.display=displayStyle;
+}
+// Spinner Toggle Section   End(code)
 
 
 // This Function To show the Result Found or No Result Found (code Start)
 const showFoundREsult = data =>{
     const showFoundNumber = document.getElementById('show-found-result');
+    spinnerDivToggle('block');
     showFoundNumber.style.display = 'block';
+    
     showFoundNumber.textContent = '';
     const div = document.createElement('div');
    
@@ -40,7 +58,8 @@ const showFoundREsult = data =>{
         div.innerHTML = `<h2>Found Result : ${data.numFound}</h2>`;
         showFoundNumber.appendChild(div);
     }
-
+    spinnerDivToggle('block');
+    showFoundNumber.style.display = 'block'
     // Result Found Authentication Section End
 }
 // This Function To show the Result Found or No Result Found (code End)
@@ -68,6 +87,7 @@ const displayYourData = docs =>{
         </div
         `;
          showSearchResut.appendChild(div);
-    });    
+    });   
+    spinnerToggle('none'); 
 }
 //  This Function is For Display the Result   (Func Code End)

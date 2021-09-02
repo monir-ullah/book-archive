@@ -6,6 +6,11 @@
 }
 /* Added Scrool Bar to Show all information     End */
 
+/* Spinner Toggle Section Start */
+#spinner-toggle{
+    display: none;
+}
+/* Spinner Toggle Section End */
 /* Show the No Result/Found Result number     Start */
 #show-found-result{
     color: white;
