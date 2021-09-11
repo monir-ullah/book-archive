@@ -1,9 +1,13 @@
 /* Added Scrool(y) Bar to Show all information     Start */
 .over-flow-hidden{
-    max-height: 550px;
-    overflow: scroll;
-    overflow-x: hidden;   
+  height: 560px; 
+  margin-bottom: 30px;  
 }
+.card{
+    height: 600px; 
+   
+}
+
 /* Added Scrool Bar to Show all information     End */
 
 /* Spinner Toggle Section Start */

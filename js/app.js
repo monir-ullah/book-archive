@@ -74,15 +74,23 @@ const displayYourData = docs =>{
         const div = document.createElement('div');
         div.classList.add('col');
         div.classList.add('over-flow-hidden');
+        // url=`https://covers.openlibrary.org/b/id/${element.cover_i}-M.jpg`
+       var url= element.cover_i?`https://covers.openlibrary.org/b/id/${element.cover_i}-M.jpg`:`https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/832px-No-Image-Placeholder.svg.png`;
+
+
+        let pubAut = element.author_name? element.author_name?.[0] : `Not Found`;
+        var pubFirst = element.first_publish_year ? element.first_publish_year?.[0] : `Not Found`;
+       
+        // <img src="${api.img?api.img:'https://img.jpg'}"></img>
         div.innerHTML = `
         <div class="card shadow">
-                <img   src="https://covers.openlibrary.org/b/id/${element.cover_i}-M.jpg" class="card-img-top" alt="...">
+                <img src="${url}"   class="card-img-top" alt="..."></img>
                 <div class="card-body">
                     <h5 class="card-title fs-3 fw-bold">${element.title}</h5>
-                    <p class="card-text"> <span class="fw-bold"> Author Name :</span> ${element.author_name}</p>
-                    <p class="card-text"> <span class=""> First Publish Year :</span> ${element.first_publish_year}</p>
-                    <p class="card-text"> <span class=""> Publisher :</span> ${element.publisher}</p>
-                    <p class="card-text"> <span class=""> Publish Date :</span> ${element.publish_date}</p>
+                    <p class="card-text"> <span class="fw-bold"> Author Name :</span> ${pubAut}</p>
+                    <p class="card-text"> <span class=""> First Publish Year :</span> ${pubFirst}</p>
+                    <p class="card-text"> <span class=""> Publisher :</span> ${element.publisher?.[0]}</p>
+                    <p class="card-text"> <span class=""> Publish Date :</span> ${element.publish_date?.[1]}</p>
                 </div
         </div
         `;
